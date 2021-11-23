@@ -30,7 +30,7 @@
    var res = {
        status  : [Number],     //状态   1：成功    0：失败
        message : [ String]       //返回描述信息
-       data    : [String  token]  //需存起来；通过请求头带给服务端进行验证
+       data    : token  //需存起来；通过请求头带给服务端进行验证
    }
    ```
 
