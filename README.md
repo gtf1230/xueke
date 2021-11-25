@@ -12,7 +12,7 @@
 
 2. 类型 ：  'POST'
 
-3. 描述：此接口用来进行cms登录
+3. 描述：此接口用来进行登录
 
 4. 入参: 
 
@@ -29,8 +29,8 @@
    ```
    var res = {
        status  : [Number],     //状态   1：成功    0：失败
-       message : [ String]       //返回描述信息
-       data    : token  //需存起来；通过请求头带给服务端进行验证
+       msg : [ String]       //返回描述信息
+       data   : token  //需存起来；通过请求头带给服务端进行验证
    }
    ```
 
@@ -40,9 +40,45 @@
 
 //获取验证码
 
-    let interface =  "/captcha"
-    let type = 'GET';
-    let params = {};
+1. 接口名 ：/captcha;
+
+2. 类型 ：  'GET'
+
+3. 描述：此接口用来获取验证码
+
+```
     //接口返回数据：
     let res  =  '图片'    //res是img标签的src
+```
 
+#### 注册接口
+
+1. 接口名 ：/user/register;
+
+2. 类型 ：  'POST'
+
+3. 描述：此接口用来进行注册
+
+4. 入参: 
+
+   ```
+   var data = {
+       username: [String],     //用户名      必填
+       password: [String],    //密码        必填
+       captcha：[String],      // 验证码      必填
+       sex：0 || 1  0：女  1：男,
+       age: number,              //年龄 10~120
+       email : [String],      //邮箱       必填
+       phone:[String],        //手机号     11位
+   }
+   ```
+   
+   5. 出参：  
+
+   ```
+   var res = {
+       status  : [Number],     //状态   1：成功    0：失败
+       msg : [ String]       //返回描述信息
+       data    : []
+   }
+   ```
