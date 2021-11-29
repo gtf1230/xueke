@@ -82,3 +82,29 @@
        data    : []
    }
    ```
+   
+   
+####  task接口
+   
+1. 接口名 ：/task/list;
+
+2. 类型 ：  'POST'
+
+3. 描述：此接口用来进行注册
+
+4. 入参: 
+
+```
+{}
+```
+
+5. 出参：
+
+```
+taskId:  作业的id
+taskName: 作业的名字 
+pid: 作业父级的id  如果为null 那么为最高级的作业  如果不为null 则该任务在task_id 为parent_id 的做作业下挂载
+updataAt: 更新时间
+createdAt: 创建时间
+```
+
