@@ -99,8 +99,8 @@ var res = {
     data	:{
         id:[Number],//个人id
         avatorName:[String],//个人名称 //非必填
-        age:[Number],//年龄 //非必填
-        sex:[char], //0.女,1.男 // 默认为1  //非必填
+        age:[Number],//年龄 
+        sex:[char], //0.女,1.男 // 默认为1  
         avatorImg:[String], //头像索引  暂未增加上传头像
         classId:[Number],//班级的ID //非必填
         description:[String],//个人描述 //非必填
