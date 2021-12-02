@@ -141,7 +141,7 @@ createdAt: 创建时间
    
 ####  领任务接口
    
-1. 接口名 ：/mine/task/list;
+1. 接口名 ：/lead/task;
 
 2. 类型 ：  'POST'
 
@@ -150,13 +150,99 @@ createdAt: 创建时间
 4. 入参: 
 
 ```
-      taskId:作业的id
+      taskId:[number] //作业的id
 ```
 
 5. 出参：
 
 ```
-     status  :[Number],
-     msg:[String],
-     data	:[]
+   var res = {
+       status  : [Number],     //状态   1：成功    0：失败
+       msg : [ String]       //返回描述信息
+       data    : []
+   }
 ```
+
+####  查询所有的领取的任务列表
+
+1. 接口名 ：/user/task/list;
+
+2. 类型 ：  'POST'
+
+3. 描述：此接口用来查询所有的领取的任务列表
+
+4. 入参: 
+
+```
+     {
+            pageSize: [number]  //一页有多少条  默认为10
+            pageNum: [number]  //第几页  默认为1
+        }
+```
+
+5. 出参：
+
+```js
+   var res = {
+   		status  : [Number],     //状态   1：成功    0：失败
+         msg : [ String]       //返回描述信息
+       	data:{
+               count: [Number]        //有多少条
+               pageCount: [Number]     //有多少页
+               rows: [{
+                  id:[Number], 
+                  taskStatus:[String], //该任务目前的状态  0 未开始  1 已开始  2进行中 3已完成 4已超时
+                  score:[Number],  // 任务的评分 1:优 2：良 3：中 4：差
+                  progress:[Number],//任务的完成度 返回的数字  渲染时自己在后面拼接上% 
+      			   updatedAt:[timestamp], 	// 修改时间
+              	   createdAt:[timestamp]	// 创建时间
+                  taskId: [Number]        //任务的taskId
+                  userId: [Number]        //用户的userId
+           }]
+           }
+       }
+   ```
+
+### 查询我的任务列表
+
+
+1.接口名:'/mine/task/list'
+
+2. 类型 ：  'POST'
+
+3. 描述：此接口用来查询我的任务列表
+
+4. 入参: { 
+            pageSize: [Number]  //一页有多少条  默认为10
+            pageNum: [Number]  //第几页  默认为1
+         } //该接口需要登录   需要用到请求头中的token
+
+5. 出参：
+
+   ```js
+   var res = {
+   		status  : [Number],     //状态   1：成功    0：失败
+         msg : [ String]       //返回描述信息
+       	data:{
+               count: [Number]        //有多少条
+               pageCount: [Number]     //有多少页
+               rows: [{
+                  id:[Number], 
+                  taskStatus:[String], //该任务目前的状态  0 未开始  1 已开始  2进行中 3已完成 4已超时
+                  score:[Number],  // 任务的评分 1:优 2：良 3：中 4：差
+                  progress:[Number],//任务的完成度 返回的数字  渲染时自己在后面拼接上% 
+      			   updatedAt:[timestamp], 	// 修改时间
+              	   createdAt:[timestamp]	// 创建时间
+                  taskId: [Number]        //任务的id
+                  userId: [Number]        //用户的userId
+           }]
+           }
+       }
+   ```
+
+
+  
+      
+
+
+   
