@@ -194,8 +194,8 @@ createdAt: 创建时间
                   taskStatus:[String], //该任务目前的状态  0 未开始  1 已开始  2进行中 3已完成 4已超时
                   score:[Number],  // 任务的评分 1:优 2：良 3：中 4：差
                   progress:[Number],//任务的完成度 返回的数字  渲染时自己在后面拼接上% 
-      			   updatedAt:[timestamp], 	// 修改时间
-              	   createdAt:[timestamp]	// 创建时间
+                  updatedAt:[timestamp], 	// 修改时间
+                  createdAt:[timestamp]	// 创建时间
                   taskId: [Number]        //任务的taskId
                   userId: [Number]        //用户的userId
            }]
@@ -235,8 +235,8 @@ createdAt: 创建时间
                   taskStatus:[String], //该任务目前的状态  0 未开始  1 已开始  2进行中 3已完成 4已超时
                   score:[Number],  // 任务的评分 1:优 2：良 3：中 4：差
                   progress:[Number],//任务的完成度 返回的数字  渲染时自己在后面拼接上% 
-      			   updatedAt:[timestamp], 	// 修改时间
-              	   createdAt:[timestamp]	// 创建时间
+                  updatedAt:[timestamp], 	// 修改时间
+                  createdAt:[timestamp]	// 创建时间
                   taskId: [Number]        //任务的id
                   userId: [Number]        //用户的userId
            }]
