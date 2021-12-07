@@ -184,7 +184,7 @@ createdAt: 创建时间
 
 ```js
    var res = {
-   		status  : [Number],     //状态   1：成功    0：失败
+   	status  : [Number],     //状态   1：成功    0：失败
          msg : [ String]       //返回描述信息
        	data:{
                count: [Number]        //有多少条
@@ -225,7 +225,7 @@ createdAt: 创建时间
 
    ```js
    var res = {
-   		status  : [Number],     //状态   1：成功    0：失败
+   	status  : [Number],     //状态   1：成功    0：失败
          msg : [ String]       //返回描述信息
        	data:{
                count: [Number]        //有多少条
@@ -268,7 +268,7 @@ createdAt: 创建时间
 5. 出参
 ```js
 var res = {
-		status  :[Number],
+	status  :[Number],
     	msg		:[String],
     	data	:[]
     }
