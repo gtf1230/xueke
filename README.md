@@ -252,7 +252,9 @@ createdAt: 创建时间
 
 3.描述：此接口用来修改用户的信息
 
-4.入参: {
+4.入参:
+```js
+{
       avatorName:[String],   //用户昵称
       age :[number] , //用户年龄
       sex:[number] , //用户性别  //1男 0女
@@ -262,7 +264,7 @@ createdAt: 创建时间
       phone:[String]//手机号码       
       以上都是选填
 } 	
-
+```
 5. 出参
 ```js
 var res = {
