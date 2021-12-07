@@ -253,21 +253,14 @@ createdAt: 创建时间
 3.描述：此接口用来修改用户的信息
 
 4.入参: {
-
       avatorName:[String],   //用户昵称
-
       age :[number] , //用户年龄
-
       sex:[number] , //用户性别  //1男 0女
-
       avatorImg:[number] , //用户头像 
-
       classId:[number], //班级的id
-
       description:[String],//个性签名 最多150个字符
-
-      phone:[String]//手机号码        以上都是选填
-
+      phone:[String]//手机号码       
+      以上都是选填
 } 	
 
 5. 出参
