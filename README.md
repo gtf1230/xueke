@@ -299,3 +299,36 @@ var res = {
     	data	:[]
     }
 ```
+
+### 10.任务详情
+
+1.接口名:'/task/detail'
+
+2.类型 ：'POST'
+
+3.描述：此接口用来查询此任务有多少人领取
+
+4.入参:
+```js
+{
+      taskId: [Number]        //任务的id
+} 	
+```
+5. 出参
+```js
+var res = {
+	status  :[Number],
+    	msg	:[String],
+    	data	:[{
+		  id
+		  taskStatus:[String], //该任务目前的状态  0 未开始  1 已开始  2进行中 3已完成 4已超时
+                  score:[Number],  // 任务的评分 1:优 2：良 3：中 4：差
+                  progress:[Number],//任务的完成度 返回的数字  渲染时自己在后面拼接上% 
+                  updatedAt:[timestamp], // 修改时间
+                  createdAt:[timestamp],// 创建时间
+                  taskId: [Number],      //任务的id
+                  userId: [Number],      //用户的userId
+	}]
+	data.length  // 有多少人接受了这个任务
+    }
+```
