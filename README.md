@@ -189,10 +189,11 @@ createdAt: 创建时间
 		pid:[number],  //父任务的id，
 		progress:[Number],//任务的完成度 返回的数字  渲染时自己在后面拼接上% 
 		score:[Number],  // 任务的评分 1:优 2：良 3：中 4：差
-		taskId: [Number]  //任务的id
-		taskName：[string] //作业的名字 
+		taskId: [Number]， //任务的id
+		taskName：[string]， //作业的名字 
 		taskStatus:[String], //该任务目前的状态  0 未开始  1 已开始  2进行中 3已完成 4已超时
-		updatedAt: 更新的时间
+		updatedAt: 更新的时间，
+		userId: [Number]用户的id
            }]
            }
        }
