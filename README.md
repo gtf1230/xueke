@@ -29,7 +29,7 @@
    ```
    var res = {
        status  : [Number],     //状态   1：成功    0：失败
-       msg : [ String]       //返回描述信息
+       msg : [ String],       //返回描述信息
        data   : token  //需存起来；通过请求头带给服务端进行验证
    }
    ```
@@ -66,7 +66,7 @@
        username: [String],     //用户名      必填
        password: [String],    //密码        必填
        captcha：[String],      // 验证码      必填
-       sex：0 || 1  0：女  1：男,
+       sex：0 || 1,  //0：女  1：男
        age: number,              //年龄 10~120
        email : [String],      //邮箱       必填
        phone:[String],        //手机号     11位
@@ -78,8 +78,8 @@
    ```
    var res = {
        status  : [Number],     //状态   1：成功    0：失败
-       msg : [ String]       //返回描述信息
-       data    : []
+       msg : [String],       //返回描述信息
+       data : []
    }
    ```
    
@@ -95,8 +95,8 @@
 ```
 var res = {
     status  :[Number],
-    msg		:[String],
-    data	:{
+    msg:[String],
+    data:{
         id:[Number],//个人id
         avatorName:[String],//个人名称 
         age:[Number],//年龄 
@@ -135,10 +135,10 @@ var res = {
        status  : [Number],     //状态   1：成功    0：失败
        msg : [ String]       //返回描述信息
        data    : [{
-       		taskId:  作业的id
-		taskName: 作业的名字 
-		pid: 作业父级的id  如果为null 那么为最高级的作业  如果不为null 则该任务在task_id 为parent_id 的做作业下挂载
-		updataAt: 更新时间
+       		taskId:[number],  //作业的id
+		taskName:[string], //作业的名字 
+		pid:[number], //作业父级的id  如果为null 那么为最高级的作业  如果不为null 则该任务在task_id 为parent_id 的做作业下挂载
+		updataAt: 更新时间,
 		createdAt: 创建时间
        }]
    }
@@ -165,7 +165,7 @@ var res = {
 ```
    var res = {
        status  : [Number],     //状态   1：成功    0：失败
-       msg: [ String]       //返回描述信息
+       msg: [String],       //返回描述信息
        data: []
    }
 ```
@@ -188,7 +188,7 @@ var res = {
 ```js
    var res = {
    	status  : [Number],     //状态   1：成功    0：失败
-         msg : [ String]       //返回描述信息
+         msg : [String] ,      //返回描述信息
        	data:[{
         	avatorName[String],//个人名称 
 		email:[String],//个人邮箱
@@ -199,7 +199,7 @@ var res = {
 		taskId: [Number]， //任务的id
 		taskName：[string]， //作业的名字 
 		taskStatus:[String], //该任务目前的状态  0 未开始  1 已开始  2进行中 3已完成 4已超时
-		updatedAt: 更新的时间，
+		updatedAt: 更新的时间,
 		userId: [Number]用户的id
            }]
        }
@@ -224,7 +224,7 @@ var res = {
    ```js
    var res = {
    	status  : [Number],     //状态   1：成功    0：失败
-         msg : [ String]       //返回描述信息
+         msg : [String],       //返回描述信息
        	data:[{
         	avatorName[String],//个人名称 
 		email:[String],//个人邮箱
@@ -235,8 +235,8 @@ var res = {
 		taskId: [Number]， //任务的id
 		taskName：[string]， //作业的名字 
 		taskStatus:[String], //该任务目前的状态  0 未开始  1 已开始  2进行中 3已完成 4已超时
-		updatedAt: 更新的时间，
-		userId: [Number]用户的id
+		updatedAt: 更新的时间,
+		userId: [Number] //用户的id
            }]
        }
    ```
@@ -265,9 +265,9 @@ var res = {
 5. 出参
 ```js
 var res = {
-	status  :[Number],
-    	msg		:[String],
-    	data	:[]
+	status: [Number],     //状态   1：成功    0：失败
+         msg :[String],       //返回描述信息
+    	data:[]
     }
 ```
 
@@ -284,16 +284,16 @@ var res = {
 {
       score:[Number],  // 任务的评分 1:优 2：良 3：中 4：差
       progress:[Number],//任务的完成度 
-      taskId: [Number]        //任务的id
-      userId: [Number]        //用户的userId
+      taskId: [Number], //任务的id
+      userId: [Number]  //用户的userId
 } 	
 ```
 5. 出参
 ```js
 var res = {
-	status  :[Number],
-    	msg	:[String],
-    	data	:[]
+	status:[Number],     //状态   1：成功    0：失败
+         msg:[String],       //返回描述信息
+    	data:[]
     }
 ```
 
@@ -308,14 +308,14 @@ var res = {
 4.入参:
 ```js
 {
-      taskId: [Number]        //任务的id
+      taskId: [Number]  //任务的id
 } 	
 ```
 5. 出参
 ```js
 var res = {
-	status  :[Number],
-    	msg	:[String],
+	status:[Number], //状态   1：成功    0：失败
+         msg:[String] //返回描述信息
     	data	:[{
 		  id
 		  taskStatus:[String], //该任务目前的状态  0 未开始  1 已开始  2进行中 3已完成 4已超时
@@ -329,3 +329,25 @@ var res = {
 	data.length  // 有多少人接受了这个任务
     }
 ```
+
+#### 12.退出登录接口
+
+1.接口名:'/log/out'
+
+2.类型 ：'POST'
+
+3.描述：此接口用来退出登录
+
+4.入参:
+```js
+{} 	
+```
+5. 出参
+```js
+var res = {
+	status:[Number],     //状态   1：成功    0：失败
+         msg:[ String]       //返回描述信息
+    	data:[]
+    }
+```
+
