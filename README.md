@@ -98,12 +98,12 @@ var res = {
     msg		:[String],
     data	:{
         id:[Number],//个人id
-        avatorName:[String],//个人名称 //非必填
+        avatorName:[String],//个人名称 
         age:[Number],//年龄 
         sex:[Number], //0.女,1.男 // 默认为1  
         avatorImg:[String], //头像索引  暂未增加上传头像
-        classId:[Number],//班级的ID //非必填
-        description:[String],//个人描述 //非必填
+        classId:[Number],//班级的ID 
+        description:[String],//个人描述 
         phone:[String],//手机号 
         email:[String],//个人邮箱 
         updatedAt:[timestamp],//用户修改信息时间   timestamp:时间戳
@@ -169,15 +169,11 @@ createdAt: 创建时间
 
 2. 类型 ：  'POST'
 
-3. 描述：此接口用来查询所有的领取的任务列表
+3. 描述：此接口用来查询所有的领取的任务列表  可以用来排行榜
 
 4. 入参: 
 
 ```
-     {
-            pageSize: [number]  //一页有多少条  默认为10
-            pageNum: [number]  //第几页  默认为1
-        }
 ```
 
 5. 出参：
@@ -187,17 +183,16 @@ createdAt: 创建时间
    	status  : [Number],     //状态   1：成功    0：失败
          msg : [ String]       //返回描述信息
        	data:{
-               count: [Number]        //有多少条
-               pageCount: [Number]     //有多少页
-               rows: [{
-                  id:[Number], 
-                  taskStatus:[String], //该任务目前的状态  0 未开始  1 已开始  2进行中 3已完成 4已超时
-                  score:[Number],  // 任务的评分 1:优 2：良 3：中 4：差
-                  progress:[Number],//任务的完成度 返回的数字  渲染时自己在后面拼接上% 
-                  updatedAt:[timestamp], 	// 修改时间
-                  createdAt:[timestamp]	// 创建时间
-                  taskId: [Number]        //任务的taskId
-                  userId: [Number]        //用户的userId
+        	avatorName[String],//个人名称 
+		email:[String],//个人邮箱
+		id: 2,
+		pid:[number],  //父任务的id，
+		progress:[Number],//任务的完成度 返回的数字  渲染时自己在后面拼接上% 
+		score:[Number],  // 任务的评分 1:优 2：良 3：中 4：差
+		taskId: [Number]  //任务的id
+		taskName：[string] //作业的名字 
+		taskStatus:[String], //该任务目前的状态  0 未开始  1 已开始  2进行中 3已完成 4已超时
+		updatedAt: 更新的时间
            }]
            }
        }
