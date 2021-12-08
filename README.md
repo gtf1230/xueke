@@ -165,8 +165,8 @@ var res = {
 ```
    var res = {
        status  : [Number],     //状态   1：成功    0：失败
-       msg : [ String]       //返回描述信息
-       data    : []
+       msg: [ String]       //返回描述信息
+       data: []
    }
 ```
 
@@ -179,8 +179,8 @@ var res = {
 3. 描述：此接口用来查询所有的领取的任务列表  可以用来排行榜
 
 4. 入参: 
-
 ```
+	{}
 ```
 
 5. 出参：
@@ -189,10 +189,10 @@ var res = {
    var res = {
    	status  : [Number],     //状态   1：成功    0：失败
          msg : [ String]       //返回描述信息
-       	data:{
+       	data:[{
         	avatorName[String],//个人名称 
 		email:[String],//个人邮箱
-		id: 2,
+		id: [number],
 		pid:[number],  //父任务的id，
 		progress:[Number],//任务的完成度 返回的数字  渲染时自己在后面拼接上% 
 		score:[Number],  // 任务的评分 1:优 2：良 3：中 4：差
@@ -202,11 +202,10 @@ var res = {
 		updatedAt: 更新的时间，
 		userId: [Number]用户的id
            }]
-           }
        }
    ```
 
-### 8.查询我的任务列表
+#### 8.查询我的任务列表
 
 
 1.接口名:'/mine/task/list'
@@ -217,11 +216,7 @@ var res = {
 
 4. 入参: 
  ```
-     {
-            pageSize: [number]  //一页有多少条  默认为10
-            pageNum: [number]  //第几页  默认为1
-        }
-        //该接口需要登录   需要用到请求头中的token
+     {}//该接口需要登录   需要用到请求头中的token
 ```
 
 5. 出参：
@@ -230,24 +225,23 @@ var res = {
    var res = {
    	status  : [Number],     //状态   1：成功    0：失败
          msg : [ String]       //返回描述信息
-       	data:{
-               count: [Number]        //有多少条
-               pageCount: [Number]     //有多少页
-               rows: [{
-                  id:[Number], 
-                  taskStatus:[String], //该任务目前的状态  0 未开始  1 已开始  2进行中 3已完成 4已超时
-                  score:[Number],  // 任务的评分 1:优 2：良 3：中 4：差
-                  progress:[Number],//任务的完成度 返回的数字  渲染时自己在后面拼接上% 
-                  updatedAt:[timestamp], 	// 修改时间
-                  createdAt:[timestamp]	// 创建时间
-                  taskId: [Number]        //任务的id
-                  userId: [Number]        //用户的userId
+       	data:[{
+        	avatorName[String],//个人名称 
+		email:[String],//个人邮箱
+		id: [number],
+		pid:[number],  //父任务的id，
+		progress:[Number],//任务的完成度 返回的数字  渲染时自己在后面拼接上% 
+		score:[Number],  // 任务的评分 1:优 2：良 3：中 4：差
+		taskId: [Number]， //任务的id
+		taskName：[string]， //作业的名字 
+		taskStatus:[String], //该任务目前的状态  0 未开始  1 已开始  2进行中 3已完成 4已超时
+		updatedAt: 更新的时间，
+		userId: [Number]用户的id
            }]
-           }
        }
    ```
 
-### 9.修改用户信息接口
+#### 9.修改用户信息接口
 
 1.接口名:'/update/user/info'
 
@@ -277,7 +271,7 @@ var res = {
     }
 ```
 
-### 10.批改任务
+#### 10.批改任务
 
 1.接口名:'/correct/task'
 
@@ -303,7 +297,7 @@ var res = {
     }
 ```
 
-### 11.任务详情
+#### 11.任务详情
 
 1.接口名:'/task/detail'
 
