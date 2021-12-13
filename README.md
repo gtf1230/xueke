@@ -361,12 +361,24 @@ var res = {
 3.描述：此接口用来修改密码的   需要在登录状况下修改
 
 4.入参:
+
 ```js
+//登录后的入参
 {
-	password:[string] // 要修改成的密码
+    type:[Number]  // 登录后 : 1 
+    password:[string] // 要修改成的密码
+}
+//未登录的入参 
+{
+    type:[Number] // 未登录 : 0
+    username:[String] // 用户账号
+    oldpass:[String] //旧密码
+    password:[String] //新密码
 }
 ```
+
 5. 出参
+
 ```js
 var res = {
 	status:[Number],     //状态   1：成功    0：失败
@@ -374,6 +386,7 @@ var res = {
     	data:[]
     }
 ```
+
 
 #### 14.排行榜
 
@@ -393,7 +406,7 @@ var res = {
     	data	:[{
 		userId:[Number],  // 用户的id
       		avgScore:[Number],//平均分
-      		avatorName: [String]     //用户的姓名
+      		avatorName: [String]，  //用户的昵称
       		email: [String]        //用户的邮箱
 	}]
     }
