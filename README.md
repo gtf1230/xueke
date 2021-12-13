@@ -425,8 +425,8 @@ var res = {
 ```
 {
 	 taskName: [string],    //任务名称
-	 pid:[number],		//父任务的id
-	 desc:[string]		//任务的详情
+	 pid:[number],		//父任务的id   不传的话为 主任务
+	 desc:[string]		//任务的详情   可以不传
 }
 ```
 
