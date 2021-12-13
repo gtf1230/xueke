@@ -351,3 +351,50 @@ var res = {
     }
 ```
 
+
+#### 13.修改密码
+
+1.接口名:'/update/user/password'
+
+2.类型 ：'POST'
+
+3.描述：此接口用来修改密码的   需要在登录状况下修改
+
+4.入参:
+```js
+{
+	password:[string] // 要修改成的密码
+}
+```
+5. 出参
+```js
+var res = {
+	status:[Number],     //状态   1：成功    0：失败
+         msg:[ String]       //返回描述信息
+    	data:[]
+    }
+```
+
+#### 14.排行榜
+
+1.接口名:'/task/ranking'
+
+2.类型 ：'POST'
+
+3.描述：此接口会返回排行榜
+
+4.入参:{} 	
+
+5. 出参
+```js
+var res = {
+	status  :[Number],
+    	msg	:[String],
+    	data	:[{
+		userId:[Number],  // 用户的id
+      		avgScore:[Number],//平均分
+      		avatorName: [String]     //用户的姓名
+      		email: [String]        //用户的邮箱
+	}]
+    }
+```
