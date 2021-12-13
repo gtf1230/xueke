@@ -438,3 +438,28 @@ var res = {
     	data	:[]
     }
 ```
+
+#### 16.删除任务
+
+1.接口名:'/delete/task'
+
+2.类型 ：'POST'
+
+3.描述：此接口用来删除任务
+
+4.入参:
+
+```
+{
+	 taskId: [number],    //任务的id
+}
+```
+
+5. 出参
+```js
+var res = {
+	status  :[Number],
+    	msg	:[String],
+    	data	:[]
+    }
+```
