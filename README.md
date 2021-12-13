@@ -365,12 +365,12 @@ var res = {
 ```js
 //登录后的入参
 {
-    type:[Number]  // 登录后 : 1 
+    version:[Number]  // 登录后 : 1 
     password:[string] // 要修改成的密码
 }
 //未登录的入参 
 {
-    type:[Number] // 未登录 : 0
+    version:[Number] // 未登录 : 0
     username:[String] // 用户账号
     oldpass:[String] //旧密码
     password:[String] //新密码
